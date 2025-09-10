@@ -5,34 +5,31 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) { 
-		/*Fazer um programa para ler os dados de três peças:
-			Para cada peça, ler:
-			código da peça,
-			quantidade de unidades,
-			valor unitário.
-			Calcular e mostrar o valor total a pagar. */
+		/* Fazer um programa em Java que:
+			Leia os dados de duas vendas.
+			Para cada venda, ler:
+			o nome do produto,
+			a quantidade vendida,
+			o preço unitário.
+			Calcule o valor total da compra e imprima o resultado. */
 		/**Exercício de fixação** */
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+		String nome1, nome2;
+		int qte1, qte2;
 		
-		int cod1, qte1, cod2, qte2, cod3, qte3;
+		double precoUnitario1, precoUnitario2, total;
 		
-		double valorUnitario1, valorUnitario2, valorUnitario3, total;
-		
-		cod1 = sc.nextInt();
+		nome1 = sc.next();
 		qte1 = sc.nextInt();
-		valorUnitario1 = sc.nextDouble();
-		
-		cod2 = sc.nextInt();
+		precoUnitario1 = sc.nextDouble(); 
+				
+		nome2 = sc.next();
 		qte2 = sc.nextInt();
-		valorUnitario2 = sc.nextDouble();
+		precoUnitario2 = sc.nextDouble();
 		
-		cod3 = sc.nextInt();
-		qte3 = sc.nextInt();
-		valorUnitario3 = sc.nextDouble();
-		
-		total = (qte1 * valorUnitario1) + (qte2 * valorUnitario2) + (qte3 * valorUnitario3);
-		System.out.printf("Valor total %.2f%n", total);
+		total = (qte1 * precoUnitario1) + (qte2 * precoUnitario2);
+		System.out.printf("Valor total %.2f%n ", total);
 		sc.close();
 	}
 }
