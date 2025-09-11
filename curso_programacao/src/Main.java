@@ -5,31 +5,35 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) { 
-		/* Fazer um programa em Java que:
-			Leia os dados de duas vendas.
-			Para cada venda, ler:
-			o nome do produto,
-			a quantidade vendida,
-			o preço unitário.
-			Calcule o valor total da compra e imprima o resultado. */
+		/* Fazer um programa que leia:
+			O nome de um funcionário, o número de horas trabalhadas no mês, 
+			o valor da hora normal, e o número de horas extras trabalhadas.
+			Considerando que a hora extra vale 1.5x a hora normal, calcule e mostre:
+			O salário base,
+			O valor das horas extras,
+			E o salário final.*/
 		/**Exercício de fixação** */
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		String nome1, nome2;
-		int qte1, qte2;
+		String nome;
+		double horaTrabalhada, horaNormal, horaExtra;
+		double salariobase, salarioHoraExtra, salarioFinal;
 		
-		double precoUnitario1, precoUnitario2, total;
+		nome = sc.next();
+		horaTrabalhada = sc.nextDouble();
+		horaNormal = sc.nextDouble();
+		horaExtra = sc.nextDouble();
 		
-		nome1 = sc.next();
-		qte1 = sc.nextInt();
-		precoUnitario1 = sc.nextDouble(); 
-				
-		nome2 = sc.next();
-		qte2 = sc.nextInt();
-		precoUnitario2 = sc.nextDouble();
+		salariobase = (horaTrabalhada * horaNormal);
+		salarioHoraExtra = (horaExtra * horaNormal * 1.5);
+		salarioFinal = (salariobase + salarioHoraExtra);
 		
-		total = (qte1 * precoUnitario1) + (qte2 * precoUnitario2);
-		System.out.printf("Valor total %.2f%n ", total);
+		System.out.println("Funicionário -> " + nome);
+		System.out.printf("Salário base -> %.2f%n", salariobase);
+		System.out.printf("Hora extras -> %.2f%n", salarioHoraExtra);
+		System.out.printf("Salário final -> %.2f%n", salarioFinal);
+		
 		sc.close();
+
 	}
 }
