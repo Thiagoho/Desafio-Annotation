@@ -5,33 +5,35 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) { 
-		/* Fazer um programa que leia:
-			O nome de um funcionário, o número de horas trabalhadas no mês, 
-			o valor da hora normal, e o número de horas extras trabalhadas.
-			Considerando que a hora extra vale 1.5x a hora normal, calcule e mostre:
-			O salário base,
-			O valor das horas extras,
-			E o salário final.*/
+		/* Fazer um programa que leia três
+		 *  valores com ponto flutuante de dupla precisão:
+		 *  A, B e C. Em seguida, calcule e mostre:  
+			a) a área do triângulo retângulo que tem A por base e C por altura.  
+			b) a área do círculo de raio C. (pi = 3.14159)  
+			c) a área do trapézio que tem A e B por bases e C por altura.  
+			d) a área do quadrado que tem lado B.  
+			e) a área do retângulo que tem lados A e B. .*/
 		/**Exercício de fixação** */
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		String nome;
-		double horaTrabalhada, horaNormal, horaExtra;
-		double salariobase, salarioHoraExtra, salarioFinal;
+		double A, B, C, triangulo, circulo, trapezio, quadrado, retangulo;
 		
-		nome = sc.next();
-		horaTrabalhada = sc.nextDouble();
-		horaNormal = sc.nextDouble();
-		horaExtra = sc.nextDouble();
+		A = sc.nextDouble();
+		B = sc.nextDouble();
+		C = sc.nextDouble();
 		
-		salariobase = (horaTrabalhada * horaNormal);
-		salarioHoraExtra = (horaExtra * horaNormal * 1.5);
-		salarioFinal = (salariobase + salarioHoraExtra);
+		triangulo = A * C / 2.0;
+		circulo = 3.14159 * C * C;
+		trapezio = (A + B) / 2.0 * C;
+		quadrado = (B * B);
+		retangulo = (A * B);
+
+		System.out.printf("Trangulo: %.3f%n", triangulo);
+		System.out.printf("Circulo: %.3f%n", circulo);
+		System.out.printf("Trapézio: %.3f%n", trapezio);
+		System.out.printf("Quadrado: %.3f%n", quadrado);
+		System.out.printf("Retangulo: %.3f%n", retangulo);
 		
-		System.out.println("Funicionário -> " + nome);
-		System.out.printf("Salário base -> %.2f%n", salariobase);
-		System.out.printf("Hora extras -> %.2f%n", salarioHoraExtra);
-		System.out.printf("Salário final -> %.2f%n", salarioFinal);
 		
 		sc.close();
 
