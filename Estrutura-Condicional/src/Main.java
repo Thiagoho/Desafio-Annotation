@@ -4,22 +4,23 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		/* Leia 2 valores inteiros (A e B).
-		 * Após, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao 
-		 * Multiplos", indicando se os valores lidos são múltiplos entre si. 
-		 * Atenção: os números devem poder ser digitados em 
-		 *	ordem crescente ou decrescente. .
+		/* Leia a hora inicial e a hora final de um jogo.
+		 * A seguir calcule a duração do jogo, sabendo que o mesmo pode 
+		*  começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora
+		*  e máxima de 24 horas.
 		 */
 		Scanner sc = new Scanner(System.in);
-		int A, B;
-		A = sc.nextInt();
-		B = sc.nextInt();
-		// Falando assim A dividir B?
-		if (A % B == 0 || A % B == 0) {
-			System.out.println("São multiplos");
+		int horaInicial = sc.nextInt();
+		int horaFinal = sc.nextInt();
+		int duracao;
+		if (horaInicial < horaFinal) {
+			duracao = horaFinal - horaInicial;
 		} else {
-			System.out.println("Ñ são multiplos");
-		}
+			duracao = 24 - horaInicial + horaFinal;
+		} 
+		System.out.println("O jogo dorou " + duracao + " hora(S)");
+		
+		
 		sc.close();
 		
 	}
