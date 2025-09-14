@@ -1,28 +1,35 @@
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		/* Leia a hora inicial e a hora final de um jogo.
-		 * A seguir calcule a duração do jogo, sabendo que o mesmo pode 
-		*  começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora
-		*  e máxima de 24 horas.
+		/*
+		 * Com base na tabela abaixo, escreva um programa que leia o código de um item e
+		 * a quantidade deste item. A seguir, calcule e mostre o valor da conta a pagar
 		 */
 		Scanner sc = new Scanner(System.in);
-		int horaInicial = sc.nextInt();
-		int horaFinal = sc.nextInt();
-		int duracao;
-		if (horaInicial < horaFinal) {
-			duracao = horaFinal - horaInicial;
+		Locale.setDefault(Locale.US);
+		int codigo = sc.nextInt();
+		int quantidade = sc.nextInt();
+
+		double total;
+
+		if (codigo == 1) {
+			total = quantidade * 4.00;
+		} else if (codigo == 2) {
+			total = quantidade * 4.50;
+		} else if (codigo == 3) {
+			total = quantidade * 5.00;
+		} else if (codigo == 4) {
+			total = quantidade * 2.00;
 		} else {
-			duracao = 24 - horaInicial + horaFinal;
-		} 
-		System.out.println("O jogo dorou " + duracao + " hora(S)");
-		
-		
+			total = quantidade * 1.50;
+		}
+		System.out.printf("Total: %.2f%n ", total);
 		sc.close();
-		
+
 	}
 
 }
