@@ -1,20 +1,20 @@
-import java.util.Locale;
+
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		/* Fazer um programa para ler um número inteiro, 
-		 e depois dizer se este número é negativo ou não. 
+		/*
+		 * Fazer um programa para ler um número inteiro e dizer se este número é par ou
+		 * ímpar.
 		 */
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		if (N < 0) {
-			System.out.println("Negativo");
+		if (N % 2 == 0) {
+			System.out.println("Par");
 		} else {
-			System.out.println("Não negativo");
+			System.out.println("Ímpar");
 		}
-		
 		sc.close();
 	}
 
