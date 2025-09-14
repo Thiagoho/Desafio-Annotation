@@ -1,17 +1,30 @@
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		/*
-		 * Estrutura Condicional Usando if [Simples]
+		 * Estrutura Condicional Usando if else 
+		 * Vamos fazer o encadeamento de estrutura condicionais
 		 */
-
-		int x = 5;
-		System.out.println("Bom dia!");
-		if (x < 0) {
-			System.out.println("Boa tarde!");
+		
+		Scanner sc = new Scanner(System.in);
+		int hora;
+		
+		System.out.println("Quantas horas? ");
+		hora = sc.nextInt();
+		
+		if (hora < 12) {
+			System.out.println("Bom dia");
+		} else {
+			if (hora < 18) {
+				System.out.println("Boa tarde");
+			} else {
+				System.out.println("Boa noite");
+			}
 		}
-		System.out.println("Boa noite!");
+		sc.close();
+		
 	}
 
 }
