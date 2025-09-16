@@ -5,28 +5,39 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		/* Você deve fazer um programa que leia um valor qualquer 
-		 * e apresente uma mensagem dizendo em qual dos 
-		 * seguintes intervalos ([0,25], (25,50], (50,75],
-		 * (75,100]) este valor se encontra. Obviamente se o
-		 * valor não estiver em nenhum destes intervalos, 
-		 *  deverá ser impressa a mensagem “Fora de intervalo”
+		/* Leia 2 valores com uma casa decimal (x e y),
+		 *  que devem representar as coordenadas 
+		 *  de um ponto em um plano. A seguir, 
+		 *  determine qual o quadrante ao qual pertence o
+		 *  ponto, ou se está sobre um dos eixos cartesianos
+		 *  ou na origem (x = y = 0). 
+		 *  Se o ponto estiver na origem, escreva a mensagem “Origem”.
+		 *  Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”,
+		 *  conforme for a 
+		 *  situação.  *  deverá ser impressa a mensagem “Fora de intervalo”
 		*/
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		double valor = sc.nextDouble();
-		if (valor < 0.0 || valor > 100.0) {
-			System.out.println("Fora de intervalo");
-		} else if (valor <= 25.0) {
-			System.out.println("Intervalo [0,25");
-		} else if (valor <= 50.0) {
-			System.out.println("Intervalo [25,50]");
-		} else if (valor <= 75.0) {
-			System.out.println("Intervalo [50,75]");
+		double x = sc.nextDouble();
+		double y = sc.nextDouble();
+		
+		if (x == 0.0 && y == 0.0) {
+			System.out.println("Origem");
+		} else if (x == 0.0) {
+			System.out.println("Eixo X");
+		} else if (y == 0.0) {
+			System.out.println("Eixo Y");
+		} else if (x > 0.0 && y > 0.0) {
+			System.out.println("Q1");
+		} else if (x < 0.0 && y > 0.0) {
+			System.out.println("Q2");
+		} else if (x < 0.0 && y < 0.0) {
+			System.out.println("Q3");
 		} else {
-			System.out.println("Intervalo [75,100]");
+			System.out.println("Q4");
 		}
+		
 		sc.close();
 	}
 }
