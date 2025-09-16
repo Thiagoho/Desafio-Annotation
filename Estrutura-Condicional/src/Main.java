@@ -5,31 +5,28 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		/*
-		 * Com base na tabela abaixo, escreva um programa que leia o código de um item e
-		 * a quantidade deste item. A seguir, calcule e mostre o valor da conta a pagar
-		 */
-		Scanner sc = new Scanner(System.in);
+		/* Você deve fazer um programa que leia um valor qualquer 
+		 * e apresente uma mensagem dizendo em qual dos 
+		 * seguintes intervalos ([0,25], (25,50], (50,75],
+		 * (75,100]) este valor se encontra. Obviamente se o
+		 * valor não estiver em nenhum destes intervalos, 
+		 *  deverá ser impressa a mensagem “Fora de intervalo”
+		*/
 		Locale.setDefault(Locale.US);
-		int codigo = sc.nextInt();
-		int quantidade = sc.nextInt();
-
-		double total;
-
-		if (codigo == 1) {
-			total = quantidade * 4.00;
-		} else if (codigo == 2) {
-			total = quantidade * 4.50;
-		} else if (codigo == 3) {
-			total = quantidade * 5.00;
-		} else if (codigo == 4) {
-			total = quantidade * 2.00;
+		Scanner sc = new Scanner(System.in);
+		
+		double valor = sc.nextDouble();
+		if (valor < 0.0 || valor > 100.0) {
+			System.out.println("Fora de intervalo");
+		} else if (valor <= 25.0) {
+			System.out.println("Intervalo [0,25");
+		} else if (valor <= 50.0) {
+			System.out.println("Intervalo [25,50]");
+		} else if (valor <= 75.0) {
+			System.out.println("Intervalo [50,75]");
 		} else {
-			total = quantidade * 1.50;
+			System.out.println("Intervalo [75,100]");
 		}
-		System.out.printf("Total: %.2f%n ", total);
 		sc.close();
-
 	}
-
 }
