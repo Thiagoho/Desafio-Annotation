@@ -14,30 +14,34 @@ public class Main {
 		 *  Se o ponto estiver na origem, escreva a mensagem “Origem”.
 		 *  Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”,
 		 *  conforme for a 
-		 *  situação.  *  deverá ser impressa a mensagem “Fora de intervalo”
+		 *  situação.
 		*/
-		Locale.setDefault(Locale.US);
-		Scanner sc = new Scanner(System.in);
 		
+		Locale.setDefault(Locale.US);
+		
+		Scanner sc = new Scanner(System.in);
 		double x = sc.nextDouble();
 		double y = sc.nextDouble();
-		
-		if (x == 0.0 && y == 0.0) {
-			System.out.println("Origem");
+		if(x == 0.0 && y == 0.0) {
+			System.out.println("Origem!");
 		} else if (x == 0.0) {
 			System.out.println("Eixo X");
 		} else if (y == 0.0) {
 			System.out.println("Eixo Y");
 		} else if (x > 0.0 && y > 0.0) {
 			System.out.println("Q1");
-		} else if (x < 0.0 && y > 0.0) {
-			System.out.println("Q2");
 		} else if (x < 0.0 && y < 0.0) {
+			System.out.println("Q2");
+		} else if (x < 0.0 && y > 0.0) {
 			System.out.println("Q3");
 		} else {
 			System.out.println("Q4");
 		}
+			
 		
 		sc.close();
+		
+
+		
 	}
 }
