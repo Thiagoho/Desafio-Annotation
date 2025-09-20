@@ -5,45 +5,25 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		/*  Em um país imaginário denominado Lisarb,
-		 *  todos os habitantes ficam felizes em pagar seus impostos, 
-		 *  pois sabem que nele não existem políticos corruptos e os 
-		 *  recursos arrecadados são utilizados em benefício da população, 
-		 *  sem qualquer desvio. A moeda deste país é o Rombus, cujo símbolo é o R$. 
-		 *  Leia um valor com duas casas decimais, equivalente ao salário de uma 
-		 *  pessoa de Lisarb. Em seguida, calcule e 
-		 *  mostre o valor que esta pessoa deve pagar 
-		 *  de Imposto de Renda, segundo a tabela abaixo. 
-		 *  Lembre que, se o salário for R$ 3002.00, a taxa
-		 *  que incide é de 8% apenas sobre R$ 1000.00, pois
-		 *  a faixa de salário que fica de R$ 0.00 até R$ 2000.00
-		 *  é isenta de Imposto de Renda. No exemplo fornecido (abaixo), 
-		 *  a taxa é de 8% sobre R$ 1000.00 + 18% sobre R$ 2.00, o que resulta em R$ 80.36
-		 *  no total. O valor deve ser impresso comduas casas decimais.
-		*/
-		Locale.setDefault(Locale.US);
-		
-		Scanner sc = new Scanner(System.in);
-		double salario = sc.nextDouble();
-		double imposto;
-		
-		if (salario <= 2000.0) {
-			imposto = 0.0;
-		} else if (salario <= 3000.0) {
-			imposto = (salario - 2000.0) * 0.08 + 1000.0;
-		} else if (salario <= 4500.0) {
-			imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
-		} else {
-			imposto = (salario - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
-		}
-		
-		if (salario <= 2000.0) {
-			System.out.println("Insento!");
-		} else {
-			System.out.printf("R$ %.2f%n", imposto);
-		}
-		
-		sc.close();
+		/*  Problema exemplo
 
+		 *  Uma operadora de telefonia cobra 
+		 *  R$ 50.00 por um plano básico que
+		 *  dá direito a 100 minutos de telefone. 
+		 *  Cada minuto que exceder a franquia 
+		 *  de 100 minutos custa R$ 2.00. Fazer um 
+		 *  programa para ler a quantidade de minutos
+		 *   que uma pessoa consumiu, daí mostrar o valor a ser pago.
+		 * */
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int minutos = sc.nextInt();
+		double conta = 50.0;
+		if (minutos > conta) {
+//			 operadores de atribuição cumulativa
+			conta += (minutos - 100) * 2.0;
+		} 
+		System.out.printf("Valor a pagar: R$ %.2f", conta);
+		sc.close();
 	}
 }
