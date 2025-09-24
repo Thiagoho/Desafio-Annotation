@@ -49,7 +49,7 @@ public class Main {
 			dia = "Valor inválido!";
 			break;
 		}
-		System.out.println("Hoje é " + dia);
+		System.out.println("Dia da semana: " + dia);
 		sc.close();
 	}
 }
