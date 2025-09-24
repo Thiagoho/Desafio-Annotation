@@ -13,43 +13,30 @@ public class Main {
 		 *  Escrever na tela o dia da semana correspondente, conforme exemplos.
 		*/
 		Locale.setDefault(Locale.US);
+		
 		Scanner sc = new Scanner(System.in);
 		int semana = sc.nextInt();
 		String dia;
-		switch (semana) {
-		case 1: {
-			dia = "Domingo";
-			break;
-		} 
-		case 2: {
-			dia = "Segunda - feira.";
-			break;
-		}
-		case 3: {
+		
+		if (semana == 1) {
+			dia = "Domingo.";
+		} else if (semana == 2) {
+			dia = "Segunda - feira";
+		} else if (semana == 3) {
 			dia = "Terça - feira.";
-			break;
-		}
-		case 4: {
+		} else if (semana == 4) {
 			dia = "Quarta - feira.";
-			break;
-		}
-		case 5: {
+		} else if (semana == 5) {
 			dia = "Quinta - feira.";
-			break;
-		}
-		case 6: {
-		dia = "Sexta - feira.";
-			break;
-		}
-		case 7: {
+		} else if (semana == 6) {
+			dia = "Sexta - feira.";
+		} else if (semana == 7) {
 			dia = "Sabádo.";
-			break;
-		}
-		default:
+		} else {
 			dia = "Valor inválido!";
-			break;
 		}
 		System.out.println("Dia da semana: " + dia);
+			
 		sc.close();
 	}
 }
