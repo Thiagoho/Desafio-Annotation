@@ -1,4 +1,5 @@
 
+import java.lang.invoke.SwitchPoint;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -6,24 +7,49 @@ public class Main {
 
 	public static void main(String[] args) {
 		/*  Problema exemplo
-
-		 *  Uma operadora de telefonia cobra 
-		 *  R$ 50.00 por um plano básico que
-		 *  dá direito a 100 minutos de telefone. 
-		 *  Cada minuto que exceder a franquia 
-		 *  de 100 minutos custa R$ 2.00. Fazer um 
-		 *  programa para ler a quantidade de minutos
-		 *   que uma pessoa consumiu, daí mostrar o valor a ser pago.
-		 * */
+		 *  Fazer um programa para ler um valor
+		 *  inteiro de 1 a 7 representando um
+		 *  dia da semana (sendo 1=domingo, 2=segunda, e assim por diante). 
+		 *  Escrever na tela o dia da semana correspondente, conforme exemplos.
+		*/
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		int minutos = sc.nextInt();
-		double conta = 50.0;
-		if (minutos > conta) {
-//			 operadores de atribuição cumulativa
-			conta += (minutos - 100) * 2.0;
+		int semana = sc.nextInt();
+		String dia;
+		switch (semana) {
+		case 1: {
+			dia = "Domingo";
+			break;
 		} 
-		System.out.printf("Valor a pagar: R$ %.2f", conta);
+		case 2: {
+			dia = "Segunda - feira.";
+			break;
+		}
+		case 3: {
+			dia = "Terça - feira.";
+			break;
+		}
+		case 4: {
+			dia = "Quarta - feira.";
+			break;
+		}
+		case 5: {
+			dia = "Quinta - feira.";
+			break;
+		}
+		case 6: {
+		dia = "Sexta - feira.";
+			break;
+		}
+		case 7: {
+			dia = "Sabádo.";
+			break;
+		}
+		default:
+			dia = "Valor inválido!";
+			break;
+		}
+		System.out.println("Hoje é " + dia);
 		sc.close();
 	}
 }
