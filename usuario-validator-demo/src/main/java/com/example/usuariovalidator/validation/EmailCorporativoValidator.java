@@ -1,3 +1,9 @@
+/*
+ * O validador verifica se o e-mail termina com o domínio corporativo definido.
+ * Se for nulo ou vazio, é ignorado (para evitar conflitos com @NotBlank).
+ */
+
+
 package com.example.usuariovalidator.validation;
 
 
