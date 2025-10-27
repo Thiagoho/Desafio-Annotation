@@ -5,17 +5,25 @@ import java.util.Scanner;
 
 public class Main {
 
+	
 	public static void main(String[] args) {
-	/* Expressão condicional Ternária.
-	 * Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma
-	 * condição.*/
+		
+		/**/
 		Locale.setDefault(Locale.US);
 		
 		Scanner sc = new Scanner(System.in);
-		double preco = 34.5;
-		double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
-		System.out.printf("Desconto: %.2f", desconto);
+		double largura = sc.nextDouble();
+		double comprimento = sc.nextDouble();
+		double metroQuadrado = sc.nextDouble();
+		
+		double area = largura * comprimento;
+		double preco = area * metroQuadrado;
+		
+		System.out.printf("Area = %.2f%n" , area);
+		System.out.printf("Preco = %.2f%n", preco);
 		
 		sc.close();
+		
+		
 	}
 }
