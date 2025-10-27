@@ -1,3 +1,11 @@
+/*
+ * O método cadastrar() recebe um objeto Usuario via JSON.
+ * A anotação @Valid ativa as validações automáticas do Bean Validation.
+ * Se alguma validação falhar, a exceção MethodArgumentNotValidException
+ * é lançada automaticamente — e capturada pelo GlobalExceptionHandler.
+ */
+
+
 package com.example.usuariovalidator.controlller;
 
 
